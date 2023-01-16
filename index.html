@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<h1 style ='text-align:center'>Visualisation des données massives</h1>
+<body>
+
+    </pre>
+      <ul>
+        <li>
+           <h2>code de la requete 1: </h2> 
+        </li>
+
+   
+    <pre>
+    <code>
+
+        SELECT ?instance_of ?instance_ofLabel ?inception ?students_count ?country ?countryLabel ?coordinate_location ?image WHERE {
+        SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }
+        ?instance_of wdt:P31 wd:Q3918.
+        ?instance_of wdt:P571 ?inception.
+        ?instance_of wdt:P2196 ?students_count. 
+        ?instance_of wdt:P17 ?country.
+        ?instance_of wdt:P625 ?coordinate_location.
+        ?instance_of wdt:P18 ?image.
+                    }
+        LIMIT 100
+    </code>
+</pre>
+
+<center>
+<iframe style="width: 80vw; height: 50vh; border: none;" src="https://query.wikidata.org/embed.html#SELECT%20%3Finstance_of%20%3Finstance_ofLabel%20%3Finception%20%3Fstudents_count%20%3Fcountry%20%3FcountryLabel%20%3Fcoordinate_location%20%3Fimage%20WHERE%20%7B%0A%20%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22%5BAUTO_LANGUAGE%5D%2Cen%22.%20%7D%0A%20%20%3Finstance_of%20wdt%3AP31%20wd%3AQ3918.%0A%20%3Finstance_of%20wdt%3AP571%20%3Finception.%0A%3Finstance_of%20wdt%3AP2196%20%3Fstudents_count.%20%0A%3Finstance_of%20wdt%3AP17%20%3Fcountry.%0A%3Finstance_of%20wdt%3AP625%20%3Fcoordinate_location.%0A%3Finstance_of%20wdt%3AP18%20%3Fimage.%0A%7D%0ALIMIT%20100" referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups"></iframe>
+
+</center>
+<li><h2>code de la requete 2: </h2> 
+</li>
+
+<pre>
+<code>
+        SELECT ?instance_of ?instance_ofLabel ?inception ?owned_by ?owned_byLabel WHERE {
+        SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }
+        ?instance_of wdt:P31 wd:Q289.
+        ?instance_of wdt:P571 ?inception.
+        ?instance_of wdt:P127 ?owned_by.
+          }
+        LIMIT 100
+   
+</code>
+</pre>
+<center>
+    <iframe style="width: 80vw; height: 50vh; border: none;" src="https://query.wikidata.org/embed.html#SELECT%20%3Finstance_of%20%3Finstance_ofLabel%20%3Finception%20%3Fowned_by%20%3Fowned_byLabel%20WHERE%20%7B%0A%20%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22%5BAUTO_LANGUAGE%5D%2Cen%22.%20%7D%0A%20%20%3Finstance_of%20wdt%3AP31%20wd%3AQ289.%0A%20%3Finstance_of%20wdt%3AP571%20%3Finception.%0A%3Finstance_of%20wdt%3AP127%20%3Fowned_by.%0A%7D%0ALIMIT%20100" referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups"></iframe>
+</center>
+</ul>
+</body>
+
+</html>
