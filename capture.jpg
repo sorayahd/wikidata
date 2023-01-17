@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<!-- saved from url=(0026)http://localhost/wikidata/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./capture_files/style.css">
+
+</head>
+<body><h1 style="text-align:center">Visualisation des données massives</h1>
+
+
+    
+      <ul>
+        <li>
+           <h2>code de la requete 1: </h2> 
+        </li>
+
+   
+    <pre>    <code>
+
+        SELECT ?instance_of ?instance_ofLabel ?inception ?students_count ?country ?countryLabel ?coordinate_location ?image WHERE {
+        SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }
+        ?instance_of wdt:P31 wd:Q3918.
+        ?instance_of wdt:P571 ?inception.
+        ?instance_of wdt:P2196 ?students_count. 
+        ?instance_of wdt:P17 ?country.
+        ?instance_of wdt:P625 ?coordinate_location.
+        ?instance_of wdt:P18 ?image.
+                    }
+        LIMIT 100
+    </code>
+</pre>
+
+<center>
+<iframe style="width: 80vw; height: 50vh; border: none;" src="./capture_files/embed.html" referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups"></iframe>
+
+</center>
+<li><h2>code de la requete 2: </h2> 
+</li>
+
+<pre><code>
+        SELECT ?instance_of ?instance_ofLabel ?inception ?owned_by ?owned_byLabel WHERE {
+        SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }
+        ?instance_of wdt:P31 wd:Q289.
+        ?instance_of wdt:P571 ?inception.
+        ?instance_of wdt:P127 ?owned_by.
+          }
+        LIMIT 100
+   
+</code>
+</pre>
+<center>
+    <iframe style="width: 80vw; height: 50vh; border: none;" src="./capture_files/embed(1).html" referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups"></iframe>
+</center>
+</ul>
+
+
+</body></html>
